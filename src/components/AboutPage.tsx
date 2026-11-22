@@ -1,0 +1,139 @@
+import { HERO_PALM_IMAGE, IMG_DATES_BRASS, IMG_HONEY_JAR } from '../data/seedData';
+import { ProductMedia } from './ProductMedia';
+
+interface AboutPageProps {
+  onBrowseProducts: () => void;
+}
+
+export function AboutPage({ onBrowseProducts }: AboutPageProps) {
+  return (
+    <section className="max-w-[1440px] mx-auto px-4 sm:px-8 pt-28 sm:pt-32 pb-20 space-y-16">
+      {/* Split Story Hero */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+        <div className="lg:col-span-6 flex flex-col justify-center space-y-5">
+          <p className="text-xs uppercase tracking-widest text-[#4A3222] font-semibold">
+            Our Heritage · Trichy-620012
+          </p>
+          <h1 className="font-display text-4xl sm:text-6xl font-bold text-[#1D1714] leading-[1.05]">
+            Purity You Can Trust, Quality You Deserve.
+          </h1>
+          <p className="font-script text-2xl text-[#D98A1C]">
+            direct from orchard groves to Edamalaiapatti Pudur
+          </p>
+          <p className="text-base text-[#1D1714]/80 leading-relaxed max-w-xl">
+            NAGAS FOODS began with a simple promise in Trichy: families
+            should never have to guess whether the dates in a box are fresh, or
+            whether a jar of forest honey has been thinned with sugar syrup. We
+            partner directly with Bam date growers, Madinah suppliers, and
+            Western Ghats forest apiaries—then hand-sort every batch ourselves.
+          </p>
+          <div className="pt-2 flex flex-wrap gap-3">
+            <button
+              type="button"
+              onClick={onBrowseProducts}
+              className="px-6 py-3 rounded-xl bg-[#4A3222] text-[#FFFDF9] text-sm font-medium hover:bg-[#1E140E] transition-colors cursor-pointer"
+            >
+              Explore All 25 Lines
+            </button>
+          </div>
+        </div>
+
+        <div className="lg:col-span-6 grid grid-cols-2 gap-4">
+          <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-[#1D1714]/10">
+            <ProductMedia src={IMG_DATES_BRASS} alt="Hand-sorted Iranian Kimia Dates" />
+          </div>
+          <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-[#1D1714]/10 mt-6">
+            <ProductMedia src={IMG_HONEY_JAR} alt="Wild Forest Raw Honey Jar" />
+          </div>
+        </div>
+      </div>
+
+      {/* Four Quality Pillars */}
+      <div className="bg-[#1E140E] text-[#FBF8F3] rounded-3xl p-8 sm:p-12">
+        <div className="max-w-2xl">
+          <p className="text-xs uppercase tracking-widest text-[#EE9F2D] font-semibold">
+            Standards We Keep
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold mt-1">
+            Why Trichy households trust our seal
+          </h2>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              num: '01.',
+              title: 'Zero Sugar Glaze',
+              body: 'Dates are packed with their natural fruit moisture—never coated in glucose syrup to fake gloss.',
+            },
+            {
+              num: '02.',
+              title: 'Unheated Raw Honey',
+              body: 'Cold-strained straight into glass jars so natural enzymes, pollen, and floral aroma stay intact.',
+            },
+            {
+              num: '03.',
+              title: 'Same-Week Sorting',
+              body: 'Every pouch and box is hand-checked in Edamalaiapatti Pudur before sealing for local dispatch.',
+            },
+            {
+              num: '04.',
+              title: 'FSSAI Licensed',
+              body: 'Registered food safety compliance under FSSAI Lic. No: 22423590000134 with transparent weights.',
+            },
+          ].map((pillar) => (
+            <div
+              key={pillar.num}
+              className="p-6 rounded-2xl bg-[#FFFDF9]/6 border border-[#FBF8F3]/12 space-y-2"
+            >
+              <p className="font-display text-2xl font-bold text-[#EE9F2D]">
+                {pillar.num}
+              </p>
+              <h3 className="font-display text-xl font-semibold text-[#FFFDF9]">
+                {pillar.title}
+              </h3>
+              <p className="text-sm text-[#FBF8F3]/80 leading-relaxed">
+                {pillar.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Storefront Preview */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#FFFDF9] border border-[#1D1714]/10 rounded-3xl p-6 sm:p-10">
+        <div className="lg:col-span-5 aspect-[4/3] rounded-2xl overflow-hidden">
+          <ProductMedia src={HERO_PALM_IMAGE} alt="Fresh date clusters ripening in a golden palm grove" />
+        </div>
+        <div className="lg:col-span-7 space-y-4">
+          <p className="text-xs uppercase tracking-widest text-[#4A3222] font-semibold">
+            Visit Our Trichy Counter
+          </p>
+          <h2 className="font-display text-3xl font-bold text-[#1D1714]">
+            Edamalaiapatti Pudur, Trichy-620012
+          </h2>
+          <p className="text-sm text-[#1D1714]/80 leading-relaxed">
+            Prefer tasting before buying bulk boxes for weddings, Ramadan
+            hampers, or festive gifting? Drop by our Edamalaiapatti Pudur shop
+            during store hours or message us directly on WhatsApp for custom
+            assortments.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2 text-sm">
+            <div>
+              <p className="text-xs text-[#1D1714]/60">Customer Care</p>
+              <p className="font-semibold tabular-nums">63791 78126</p>
+            </div>
+            <div>
+              <p className="text-xs text-[#1D1714]/60">Email</p>
+              <p className="font-semibold break-all">nagasfoodstrichy@gmail.com</p>
+            </div>
+            <div>
+              <p className="text-xs text-[#1D1714]/60">FSSAI Lic. No</p>
+              <p className="font-semibold tabular-nums">22423590000134</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
